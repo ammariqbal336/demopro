@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DemoProject" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="background">#D1D9DF</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.DemoProject" parent="Base.Theme.DemoProject" />
+
+
+    <style name="textColor_white">
+
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="textorange_bold">
+
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

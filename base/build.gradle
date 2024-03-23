@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id("com.google.dagger.hilt.android") version "2.44" apply false
+    id "io.sentry.android.gradle" version "3.12.0"
+
+}
+
+android {
+    namespace = "com.base"
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 34
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(":domain")
+    implementation libs.kotlin.stdlib.jdk7
+    implementation libs.androidx.appcompat
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.legacy.support.v4
+
+    //    lifecycle
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.livedata.ktx
+
+
+//    coroutines
+    implementation libs.kotlinx.coroutines.android
+
+    implementation libs.androidx.navigation.fragment.ktx
+
+    implementation libs.glide
+
+    implementation libs.androidx.recyclerview
+
+//    dagger hilt
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+
+    implementation libs.connection.checker
+
+
+}
+kapt {
+    correctErrorTypes true
+    javacOptions {
+        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+    }
+}

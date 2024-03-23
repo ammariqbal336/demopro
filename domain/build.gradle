@@ -1,0 +1,29 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+
+repositories {
+    //mavenCentral()
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.kotlin.stdlib.jdk7
+    implementation libs.kotlinx.coroutines.android
+
+    //    moshi
+    implementation libs.moshi
+    kapt libs.moshi.kotlin.codegen
+
+//    dagger hilt
+    implementation libs.hilt.core
+    kapt libs.hilt.compiler
+    implementation libs.gson
+
+
+
+}
+
+sourceCompatibility = "17"
+targetCompatibility = "17"

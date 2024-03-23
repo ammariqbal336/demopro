@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#ffffff</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="toastBgColor">#ffffff</color>
+    <color name="toastTextColor">#000000</color>
+    <color name="loaderColor">#DE5846</color>
+    <color name="WhiteColor">#ffffff</color>
+    <color name="WhiteColorBlur">#FFFFFF</color>
+    <color name="colorDullBackground_state_unselected">#07000000</color>
+    <color name="colorLightBlue">#36CEE5</color>
+    <color name="colorBlue">#676AF6</color>
+    <color name="colorGray">#7D7D7D</color>
+    <color name="colorGray6">#D1D9DF</color>
+</resources>
